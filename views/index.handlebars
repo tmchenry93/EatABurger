@@ -1,0 +1,49 @@
+<div class="row" id="createBurger">
+	<div class="col-md-4">
+	</div>
+
+	<div class="col-md-4">
+		<form>
+			<label for="burgerName">Create Your Burger</label>
+			<input id="burger" name="burger">
+			<button type="submit" id="burgerCreation">Create Burger</button>
+		</form>
+	</div>
+
+	<div class="col-md-4">
+	</div>
+</div>
+
+<div class="row">
+	<!-- this is creating the menu/ uneaten column -->
+	<div class="col-md-2">
+	</div>
+
+	<div class="col-md-3">
+		<div id="uneaten">
+			<ul>
+				{{each ////}}
+					{this.id}
+					{this.burger_name}
+					<button id="devourIt">DEVOUR IT!</button>
+			</ul>
+		</div>
+	</div>
+
+	<div clas="col-md-2">
+	</div>
+
+	<div class="col-md-3">
+		<!-- this is creating the devoured column -->
+		<div id="devoured">
+			<ul>
+				{{each ////}}
+					{this.id}
+					{this.burger_name}
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-md-2">
+	</div>
+</div>
