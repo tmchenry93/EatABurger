@@ -1,10 +1,29 @@
 var orm = require("../config/orm.js");
 
-var submitButton = 
-	$("#burgerCreation").click(function(){
-		orm.createBurger();
-		$("#uneaten").empty();
-		// pushing the updated data into the menu/ uneaten div
-	});
+var burger = {
+	devoured: function(cb){
+		orm.selectDevour("burgers", function(res){
+			cb(res);
+		});
+	},
 
-module.exports = submitButton;
+	uneaten: function(cb){
+		orm.selectUneaten("burgers", function(res){
+			cb(res);
+		});
+	},
+
+	update: function(objColVals, condition, cb){
+		orm.updateBurger("burgers", objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+
+	create: function(cols, vals, cb){
+		orm.createBurger("burgers", cols, vals, function(res){
+			cb(res);
+		});
+	}
+};
+
+module.exports = burger;
